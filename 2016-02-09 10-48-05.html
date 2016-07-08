@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {width:100%;}
+table, th, td {border: 1px solid black;border-collapse: collapse;
+}th, td {padding: 15px;
+}table tr:nth-child(even) {background-color: #eee;}
+table tr:nth-child(odd) {background-color:#fff;}
+table th{background-color: black;color: white;}
+span.wrong {background-color: red;}
+span.expected {background-color: yellow;}
+</style>
+</head>
+<body>
+<table><caption>Report for API tests Execution</caption><tr><th>Serial No.</th><th>Name Of Scenario</th><th>Status</th><th>Time(sec)</th><th>Reason</th></tr><tr><td>1 : NU_1</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user with all valid data</td><td><font color="red">FAIL</font></td><td>2.8</td><td>Key: code and Value: M00110, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Registration Successful, <b>Found</b>:  User Already Registered<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>2 : NU_2</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Trying to add the already added user</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: User Already Registered, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>3 : NU_3</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user without emailid value in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Please Enter Valid EmailId Length In Between 6 to 30, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>4 : NU_4</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user with invalid emailid value and new mobile number in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Please Enter Valid EmailId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>5 : NU_5</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user without PhoneNumber value in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Please Enter Valid PhoneNumber, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>6 : NU_6</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user with PhoneNumber less than 10 digits value in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Please Enter Valid PhoneNumber, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>7 : NU_7</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user with PhoneNumber More than 15 digits value in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Please Enter Valid PhoneNumber, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>8 : NU_8</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user without passCode value in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 And Less Than 25 And Should Contain An Uppercase,Lowercase,Numeric & a Special Characters Like (@_), MATCHES<br>     
+Key: type and Value: 04, MATCHES<br>     
+</td></tr><tr><td>9 : NU_9</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user without passCode Format validation in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 And Less Than 25 And Should Contain An Uppercase,Lowercase,Numeric & a Special Characters Like (@_), MATCHES<br>     
+Key: type and Value: 04, MATCHES<br>     
+</td></tr><tr><td>10 : NU_10</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user without passCode less than 8 character</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 And Less Than 25 And Should Contain An Uppercase,Lowercase,Numeric & a Special Characters Like (@_), MATCHES<br>     
+Key: type and Value: 04, MATCHES<br>     
+</td></tr><tr><td>11 : NU_11</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: Adding user with passCode more than 25 character</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>12 : NU_12</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>13 : NU_13</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>14 : NU_14</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as DELETE.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>15 : NU_14</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>16 : NU_15</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Incorrect Request  or  fields are missing, <b>Found</b>:  Enter a Valid PassCode<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>17 : NU_16</td><td>Service: Add a new user to OmnyPay-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>18 : LI_1</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed valid values</td><td>PASS</td><td>0.8</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Login Successful, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>19 : LI_2</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed passcode is not following the passcode rule</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 and less Than 25 and Contain an Uppercase,Lowercase,Numeric & a Special Characters like (@_), MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>20 : LI_3</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed wrong / Invalid passcode</td><td>PASS</td><td>0.8</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Login Failed, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>21 : LI_4</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed wrong / Invalid User Id</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>22 : LI_5</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If blank / No  value is passed in user_id field of Request.</td><td>PASS</td><td><b>41.3</b></td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>23 : LI_6</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If user already logged in.</td><td>PASS</td><td>0.8</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: User Already Logged In, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>24 : LI_7</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If blank / No  value is passed in passCode field of Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 and less Than 25 and Contain an Uppercase,Lowercase,Numeric & a Special Characters like (@_), MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>25 : LI_8</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>26 : LI_9</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed with a special characters in User_id parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>27 : LI_10</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>28 : LI_11</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed with less than 8 characters in Passcode parameters in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Password Length Should Be More Than 8 and less Than 25 and Contain an Uppercase,Lowercase,Numeric & a Special Characters like (@_), MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>29 : LI_12</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as GET/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>30 : LI_12</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as GET/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>31 : LI_13</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>32 : LO_1</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If  passed proper User ID</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: User Signed Out, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>33 : LO_2</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If  passed invalid User ID in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+
+ <b>Key</b>: type, <b>Expected</b>: 03, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>34 : LI_1</td><td>Service: Login a user to OmnyPay-- Method POST<br> 
+Scenario: If passed valid values</td><td>PASS</td><td>0.8</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Login Successful, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>35 : LO_3</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If paas some value in request</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: User Signed Out, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>36 : LO_4</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If user already signed out</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M001<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: User Already signed out, <b>Found</b>:  User Already Signed Out<br> 
+
+Key: type and Value: 04, MATCHES<br>     
+</td></tr><tr><td>37 : LO_5</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as POST/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>38 : LO_5</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: If passed Request with method as POST/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>39 : LO_6</td><td>Service: Logout a user from OmnyPay-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>40 : UR_1</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when registering new user</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>41 : UR_2</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If user already Registered</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>42 : UR_3</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when some cards exist for a user.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: accBrand and Value: kohls c, MATCHES<br>     
+Key: acctId and Value: Kohl1223, MATCHES<br>     
+Key: tokenExpDate and Value: 2111, MATCHES<br>     
+Key: message and Value: User Exist, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: isFirstCard and Value: true, MATCHES<br>     
+
+ <b>Key</b>: user_id, <b>Expected</b>: 29243D41DE555482E0530100007F5827, <b>Found</b>:  287E958D3B2A2F63E0530100007FE50E<br> 
+
+Key: Token2 and Value: Token263713238, MATCHES<br>     
+Key: accType and Value: 1, MATCHES<br>     
+Key: Token1 and Value: Token163713238, MATCHES<br>     
+Key: udk and Value: Kols12sw, MATCHES<br>     
+Key: Token3 and Value: Token363713238, MATCHES<br>     
+</td></tr><tr><td>43 : UR_4</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If No parameter is passed in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>44 : UR_5</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If No parameter is passed in the request packet</td><td>PASS</td><td>0.6</td><td>Key: cards and Value: null, MATCHES<br>     
+Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Merchant Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+</td></tr><tr><td>45 : UR_6</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If No parameter is passed in the request packet with ""</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>46 : UR_7</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If No value is passed for "MUserId"</td><td>PASS</td><td>0.6</td><td>Key: cards and Value: null, MATCHES<br>     
+Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Merchant Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+</td></tr><tr><td>47 : UR_8</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when "MUserId" value is less than 10 digits</td><td>PASS</td><td>0.6</td><td>Key: cards and Value: null, MATCHES<br>     
+Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Merchant Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+</td></tr><tr><td>48 : UR_9</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when "MUserId" value is More than 50 digits</td><td>PASS</td><td>0.6</td><td>Key: cards and Value: null, MATCHES<br>     
+Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Merchant Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+</td></tr><tr><td>49 : UR_10</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when "MUserId" value is only Alpha charaters</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: accBrand and Value: kohls c, MATCHES<br>     
+Key: acctId and Value: Kohl1223, MATCHES<br>     
+Key: tokenExpDate and Value: 2111, MATCHES<br>     
+Key: message and Value: Registration Successful, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: isFirstCard and Value: true, MATCHES<br>     
+Key: Token2 and Value: Token263713238, MATCHES<br>     
+Key: accType and Value: 1, MATCHES<br>     
+Key: Token1 and Value: Token163713238, MATCHES<br>     
+Key: udk and Value: Kols12sw, MATCHES<br>     
+Key: Token3 and Value: Token363713238, MATCHES<br>     
+</td></tr><tr><td>50 : UR_11</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when "MUserId" value is Special Charaters</td><td>PASS</td><td>0.6</td><td>Key: cards and Value: null, MATCHES<br>     
+Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Merchant Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: user_id and Value: null, MATCHES<br>     
+</td></tr><tr><td>51 : UR_12</td><td>Service: User Registration -- Method POST<br> 
+Scenario: Response when "MUserId" value is Only Numbers</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: accBrand and Value: kohls c, MATCHES<br>     
+Key: acctId and Value: Kohl1223, MATCHES<br>     
+Key: tokenExpDate and Value: 2111, MATCHES<br>     
+Key: message and Value: Registration Successful, MATCHES<br>     
+
+ <b>Key</b>: type, <b>Expected</b>: 02, <b>Found</b>:  01<br> 
+
+Key: isFirstCard and Value: true, MATCHES<br>     
+Key: Token2 and Value: Token263713238, MATCHES<br>     
+Key: accType and Value: 1, MATCHES<br>     
+Key: Token1 and Value: Token163713238, MATCHES<br>     
+Key: udk and Value: Kols12sw, MATCHES<br>     
+Key: Token3 and Value: Token363713238, MATCHES<br>     
+</td></tr><tr><td>52 : UR_13</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If passed with a extra " , " after the "MUserId" parameter in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>53 : UR_14</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>54 : UR_14</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>55 : UR_14</td><td>Service: User Registration -- Method POST<br> 
+Scenario: If passed NO Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>56 : UR_15</td><td>Service: User Registration -- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>57 : UP_1</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passes Valid parameters</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Profile Updated Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>58 : UP_2</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed Request with invalid User ID</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: IInvalid Userid, <b>Found</b>:  Invalid Userid<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>59 : UP_3</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without Email value in Request parameters</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid New EmailId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>60 : UP_4</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed with invalid email id in newEmailId parameter in Request.</td><td>PASS</td><td>1.5</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid New EmailId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>61 : UP_5</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without Firstname value in Request parameters</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid First Name, <b>Found</b>:  Enter Valid FirstName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>62 : UP_6</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed with special characters in firstName parameter in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid First Name, <b>Found</b>:  Enter Valid FirstName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>63 : UP_7</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without Lastname value in Request parameters</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid Last Name, <b>Found</b>:  Enter Valid LastName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>64 : UP_8</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed with special characters in lastName parameter in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid Last Name, <b>Found</b>:  Enter Valid LastName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>65 : UP_9</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without address1 value in Request parameters</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid Address1, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>66 : UP_10</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without address2 value in Request parameters</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Profile Updated Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>67 : UP_11</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without address3 value in Request parameters</td><td><font color="red">FAIL</font></td><td>0.8</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Profile Updated Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>68 : UP_12</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without zipcode value in Request parameters</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid Zipcode, <b>Found</b>:  Enter Valid ZipCode<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>69 : UP_13</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed with invalid ZipCode  parameter in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid Zipcode, <b>Found</b>:  Enter Valid ZipCode<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>70 : UP_14</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without city value in Request parameters</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid City, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>71 : UP_15</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: when trying to add without state value in Request parameters</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid State, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>72 : UP_16</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>73 : UP_17</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed Request with method as POST.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Incorrect Method, <b>Found</b>:  Enter a Valid NewEmailId<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>74 : UP_17</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>75 : UP_18</td><td>Service: 
+
+
+Update an existing user profile
+
+-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>76 : GSQ_1</td><td>Service: Get Security Questions(5)-- Method POST<br> 
+Scenario: No parameter to pass</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: questionId and Value: 876541003, MATCHES<br>     
+Key: questionName and Value: Who was your childhood hero?, MATCHES<br>     
+Key: message and Value: Records Found, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>77 : GSQ_2</td><td>Service: Get Security Questions(5)-- Method POST<br> 
+Scenario: If passed Request with method as PUT/POST.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>78 : GSQ_3</td><td>Service: Get Security Questions(5)-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>79 : ASQ_1</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: For all valid and existing question ID</td><td>PASS</td><td>0.9</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Security questions updated successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>80 : ASQ_2</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed without answer for a security question</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid Answer1, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>81 : ASQ_3</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed with out a question ID</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid QuestionId5, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>82 : ASQ_4</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed with out a question and a answer parameter only</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid QuestionId5, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>83 : ASQ_5</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>84 : ASQ_6</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>85 : ASQ_7</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed Request with method as PUT/GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>86 : ASQ_7</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If passed Request with method as PUT/GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>87 : ASQ_8</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: If  passed Invalid / Non existing User ID in URL</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>88 : ASQ_9</td><td>Service: Answer Security Questions-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>94 : SLIAP_1</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: With all positive values and single line item</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: message and Value: Amount Saved Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>95 : SLIAP_2</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass Multiple Line items</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Amount Saved Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>96 : SLIAP_3</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If passed Invalid POSID in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M001<br> 
+
+Key: message and Value: Pos ID Not Valid , MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>97 : SLIAP_4</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>98 : SLIAP_5</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>99 : SLIAP_6</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>100 : SLIAP_6</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>101 : SLIAP_7</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass alpha characters in Qty parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>102 : SLIAP_8</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass Alpha characters in ProductSKU parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>103 : SLIAP_9</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass alpha characters in netAmount parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>104 : SLIAP_10</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass False in readyForPayment parameter</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Amount Saved Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>105 : SLIAP_11</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: Pass alpha characters in Price parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>106 : SLIAP_12</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: If No Content is passed in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>107 : SLIAP_13</td><td>Service: Submit Line Items and Amounts from POS-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>108 : AC_1</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when adding a card for the first time</td><td><font color="red">FAIL</font></td><td>0.8</td><td>Key: code and Value: M00110, MATCHES<br>     
+
+ <b>Key</b>: acctId, <b>Expected</b>: 3881, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 2012, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Card Added Successfully, <b>Found</b>:  Card Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  03<br> 
+
+
+ <b>Key</b>: Token2, <b>Expected</b>: 6222224078422222, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 6222226645902222, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: udk, <b>Expected</b>: 274E24E301B03BB4, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token3, <b>Expected</b>: 6222223143522222, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>109 : AC_2</td><td>Service: Add Card-- Method POST<br> 
+Scenario: Response when adding a  duplicate card</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M00110, MATCHES<br>     
+Key: acctId and Value: null, MATCHES<br>     
+Key: tokenExpDate and Value: null, MATCHES<br>     
+Key: message and Value: Card Exist, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+Key: tokens and Value: null, MATCHES<br>     
+Key: udk and Value: null, MATCHES<br>     
+</td></tr><tr><td>110 : AC_3</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add a  invalid card</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccNo, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>111 : AC_4</td><td>Service: Add Card-- Method POST<br> 
+Scenario: When trying to add card with out  "accNo"  in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccNo, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>112 : AC_5</td><td>Service: Add Card-- Method POST<br> 
+Scenario: When trying to add card with 13 digit card number  "accNo"  in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 3881, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 2012, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Card Added Successfully, <b>Found</b>:  Card Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  03<br> 
+
+
+ <b>Key</b>: Token2, <b>Expected</b>: 6222224078422222, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 6222226645902222, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: udk, <b>Expected</b>: 274E24E301B03BB4, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token3, <b>Expected</b>: 6222223143522222, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>113 : AC_6</td><td>Service: Add Card-- Method POST<br> 
+Scenario: When trying to add card with 16 digit card number  "accNo"  in Request.</td><td><font color="red">FAIL</font></td><td>1.0</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 4306, <b>Found</b>:  1401<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 1201, <b>Found</b>:  0902<br> 
+
+Key: message and Value: Card Added Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+
+ <b>Key</b>: Token2, <b>Expected</b>: 6222224624332222, <b>Found</b>:  6105101369265100<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 6222223069602222, <b>Found</b>:  6105102048075100<br> 
+
+Key: udk and Value: null, MATCHES<br>     
+
+ <b>Key</b>: Token3, <b>Expected</b>: 6222225570422222, <b>Found</b>:  6105107365015100<br> 
+
+</td></tr><tr><td>114 : AC_7</td><td>Service: Add Card-- Method POST<br> 
+Scenario: When trying to add card with 19 digit card number  "accNo"  in Request.</td><td><font color="red">FAIL</font></td><td>0.8</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 4307, <b>Found</b>:  1402<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 1201, <b>Found</b>:  0902<br> 
+
+Key: message and Value: Card Added Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+
+ <b>Key</b>: Token2, <b>Expected</b>: 6006496369343463, <b>Found</b>:  6006491761543463<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 6006496546633463, <b>Found</b>:  6006498949703463<br> 
+
+Key: udk and Value: null, MATCHES<br>     
+
+ <b>Key</b>: Token3, <b>Expected</b>: 6006491760143463, <b>Found</b>:  6006495181403463<br> 
+
+</td></tr><tr><td>115 : AC_8</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accNo" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccNo, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>116 : AC_9</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid account type(other than 1,2,3)</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid AccType, <b>Found</b>:  Enter a Valid AccNo<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>117 : AC_10</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid account type(characters)</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccType, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>118 : AC_11</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with '3' as account type and Accbrand as "PL/GIFT"  along with gift card.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M001<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 4308, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 1201, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Card Added Successfully, <b>Found</b>:  Incorrect Request  or  Fields/Types Are Missing<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  02<br> 
+
+
+ <b>Key</b>: Token2, <b>Expected</b>: 3782827814120010, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 3782827427490010, <b>Found</b>:  null<br> 
+
+Key: udk and Value: null, MATCHES<br>     
+
+ <b>Key</b>: Token3, <b>Expected</b>: 3782827227250010, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>119 : AC_12</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with '0' as account type.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccType, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>120 : AC_13</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to addcard  without account type value in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>121 : AC_14</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with non existing "accCardExpDate" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a valid AccCardExpMonth, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>122 : AC_15</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid "accCardExpDate" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a valid AccCardExpMonth, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>123 : AC_16</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accCardExpDate" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a valid AccCardExpMonth, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>124 : AC_17</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid(other than alpha character) "accHolderName" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AcctHolderName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>125 : AC_18</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accHolderName" value in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AcctHolderName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>126 : AC_19</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with expired "accCardExpYear" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Card expired, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>127 : AC_20</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid "accCardExpYear" value</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid accCardExpYear, <b>Found</b>:  Enter a Valid AccCardExpYear<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>128 : AC_21</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accCardExpYear" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid accCardExpYear, <b>Found</b>:  Enter a Valid AccCardExpYear<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>129 : AC_22</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "cardNickName" value</td><td>PASS</td><td>1.9</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid CardNickName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>130 : AC_23</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "cardNickName" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid CardNickName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>131 : AC_24</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accBrand" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBrand, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>132 : AC_25</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accBrand" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBrand, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>133 : AC_26</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accCardVfcCode" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBrand, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>134 : AC_27</td><td>Service: Add Card-- Method POST<br> 
+Scenario: when trying to add without "accCardVfcCode" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccCardVfcCode, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>135 : AC_28</td><td>Service: Add Card-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>136 : AC_29</td><td>Service: Add Card-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>137 : AC_30</td><td>Service: Add Card-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>138 : AC_30</td><td>Service: Add Card-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td><font color="red">FAIL</font></td><td>2.0</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: IInvalid Userid, <b>Found</b>:  Incorrect Method<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>139 : AC_31</td><td>Service: Add Card-- Method POST<br> 
+Scenario: Add a valid card for In valid / Non existing User ID in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M001, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid api-key, <b>Found</b>:  Card Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 02, <b>Found</b>:  03<br> 
+
+</td></tr><tr><td>140 : AC_32</td><td>Service: Add Card-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>141 : ABC_1</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed all valid values for parameters</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 3943, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 2212, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Bank Added Successfully, <b>Found</b>:  Bank Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  03<br> 
+
+
+ <b>Key</b>: isFirstCard, <b>Expected</b>: false, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token2, <b>Expected</b>: 4012884982861881, <b>Found</b>:  null<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 4012883574031881, <b>Found</b>:  null<br> 
+
+Key: udk and Value: null, MATCHES<br>     
+
+ <b>Key</b>: Token3, <b>Expected</b>: 4012889654431881, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>142 : ABC_2</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed existing Bank acc details</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: acctId and Value: null, MATCHES<br>     
+Key: tokenExpDate and Value: null, MATCHES<br>     
+Key: message and Value: Bank Exist, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+Key: isFirstCard and Value: null, MATCHES<br>     
+Key: tokens and Value: null, MATCHES<br>     
+Key: udk and Value: null, MATCHES<br>     
+</td></tr><tr><td>143 : ABC_3</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: Do not pass Account number.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccNo, <b>Found</b>:  Enter a Valid AccNo<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>144 : ABC_4</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If account number is passed Alphanumeric character</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccNo, <b>Found</b>:  Enter a Valid AccNo<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>145 : ABC_5</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If Account number is not in the range of  (6 - 19)</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccNo, <b>Found</b>:  Enter a Valid AccNo<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>146 : ABC_6</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accHolderName" value</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid acctHolderName, <b>Found</b>:  Enter a Valid AcctHolderName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>147 : ABC_7</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accHolderName" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid acctHolderName, <b>Found</b>:  Enter a Valid AcctHolderName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>148 : ABC_8</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to pass  speacial charaters/ numbers with "accHolderName" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid acctHolderName, <b>Found</b>:  Enter a Valid AcctHolderName<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>149 : ABC_9</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to pass  speacial charaters/ numbers with "accCity" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccCity, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>150 : ABC_10</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to pass  speacial charaters/ numbers with "accBankName" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBankName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>151 : ABC_11</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to pass  speacial charaters/ numbers with "accState" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid accState, <b>Found</b>:  Enter a Valid AccState<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>152 : ABC_12</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to pass  speacial charaters/ numbers with "accState" value in Request.</td><td><font color="red">FAIL</font></td><td>0.9</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: acctId, <b>Expected</b>: 3966, <b>Found</b>:  1403<br> 
+
+
+ <b>Key</b>: tokenExpDate, <b>Expected</b>: 2212, <b>Found</b>:  0902<br> 
+
+Key: message and Value: Bank Added Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: isFirstCard and Value: false, MATCHES<br>     
+
+ <b>Key</b>: Token2, <b>Expected</b>: 3401298562867650, <b>Found</b>:  3401291997527690<br> 
+
+
+ <b>Key</b>: Token1, <b>Expected</b>: 3401293876527650, <b>Found</b>:  3401294149507690<br> 
+
+Key: udk and Value: null, MATCHES<br>     
+
+ <b>Key</b>: Token3, <b>Expected</b>: 3401299582897650, <b>Found</b>:  3401299542787690<br> 
+
+</td></tr><tr><td>153 : ABC_13</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accBankType" value</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccBankType, <b>Found</b>:  Enter a Valid AccBankType<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>154 : ABC_14</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accBankType" value in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccBankType, <b>Found</b>:  Enter a Valid AccBankType<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>155 : ABC_15</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accZipcode" value</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid zipCode, <b>Found</b>:  Enter a Valid AccZipCode<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>156 : ABC_16</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accZipcode" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter Valid zipCode, <b>Found</b>:  Enter a Valid AccZipCode<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>157 : ABC_17</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accBankRout" value</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccBankRout, <b>Found</b>:  Enter a Valid AccBankRout<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>158 : ABC_18</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accBankRout" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid AccBankRout, <b>Found</b>:  Enter a Valid AccBankRout<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>159 : ABC_19</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accCity" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccCity, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>160 : ABC_20</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accCity" value in Request.</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccCity, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>161 : ABC_21</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accBankName" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBankName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>162 : ABC_22</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accBankName" value in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccBankName, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>163 : ABC_23</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accState" value</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid accState, <b>Found</b>:  Enter a Valid AccState<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>164 : ABC_24</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accState" value in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a Valid accState, <b>Found</b>:  Enter a Valid AccState<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>165 : ABC_25</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accStreet" value</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccStreet, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>166 : ABC_26</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accStreet" value in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter a Valid AccType, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>167 : ABC_27</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with invalid/ special character in  "accType" value(other than 0)</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid accType, <b>Found</b>:  Enter a Valid AccType<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>168 : ABC_28</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add with '(1, 2, 3)' as account type.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>169 : ABC_29</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: when trying to add without "accType" value in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>170 : ABC_30</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>171 : ABC_31</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M001, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Incorrect Method, <b>Found</b>:  Bank Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 02, <b>Found</b>:  03<br> 
+
+</td></tr><tr><td>172 : ABC_32</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: IInvalid Userid, <b>Found</b>:  Incorrect Method<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>173 : ABC_32</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid api-key, <b>Found</b>:  Incorrect Method<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>174 : ABC_33</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: Add a valid Bank card for In valid / Non existing User ID in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter a valid user id, <b>Found</b>:  Invalid Userid<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 05, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>175 : ABC_34</td><td>Service: Add Bank Card -- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>176 : DA_1</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If  try to delete existing account</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Account Deleted Successfully, <b>Found</b>:  Account Not Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>177 : DA_2</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If  try to delete a non existing account</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Account Not Exist, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>178 : DA_3</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If  try to delete a already deleted account</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Account Not Exist, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>179 : DA_4</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If passed with a extra some parameters in Request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Account Deleted Successfully, <b>Found</b>:  Account Not Exist<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 01, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>180 : DA_5</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>181 : DA_5</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>182 : DA_5</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If passed Request with method as POST.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>183 : DA_6</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: If  try to delete a account with invalid User ID in URL</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Invalid Userid, MATCHES<br>     
+
+ <b>Key</b>: type, <b>Expected</b>: 03, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>184 : DA_7</td><td>Service: Delete Account-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>185 : CH_1</td><td>Service: Checkin-- Method POST<br> 
+Scenario: When pass with any positive parameters</td><td><font color="red">FAIL</font></td><td>3.9</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Checkin Successful, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>186 : CH_2</td><td>Service: Checkin-- Method POST<br> 
+Scenario: when trying to add without "posId" value in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid posId, <b>Found</b>:  Invalid PosId<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 05, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>187 : CH_3</td><td>Service: Checkin-- Method POST<br> 
+Scenario: when trying to pass Special characterswith "posId" value in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid posId, <b>Found</b>:  Invalid PosId<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 05, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>188 : CH_4</td><td>Service: Checkin-- Method POST<br> 
+Scenario: When pass with wrong /Invalid terminal ID in POS</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid posId, <b>Found</b>:  Invalid PosId<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>189 : CH_5</td><td>Service: Checkin-- Method POST<br> 
+Scenario: When pass with wrong /Invalid merchant ID in POS</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid posId, <b>Found</b>:  Invalid PosId<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>190 : CH_6</td><td>Service: Checkin-- Method POST<br> 
+Scenario: When pass with wrong /Invalid checksum value in POS</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Invalid posId, <b>Found</b>:  Invalid PosId<br> 
+
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>191 : CH_7</td><td>Service: Checkin-- Method POST<br> 
+Scenario: when trying to pass Special characterswith "accId" value in Request.</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter valid accId, <b>Found</b>:  Enter Valid AccId<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 05, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>192 : CH_8</td><td>Service: Checkin-- Method POST<br> 
+Scenario: when passing non existing "acc id "</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+
+ <b>Key</b>: message, <b>Expected</b>: Enter valid accId, <b>Found</b>:  Enter Valid AccId<br> 
+
+
+ <b>Key</b>: type, <b>Expected</b>: 05, <b>Found</b>:  02<br> 
+
+</td></tr><tr><td>193 : CH_9</td><td>Service: Checkin-- Method POST<br> 
+Scenario: with passed Invalid User Id in URL</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>194 : CH_10</td><td>Service: Checkin-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>195 : CH_11</td><td>Service: Checkin-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>196 : CH_12</td><td>Service: Checkin-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>2.0</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>197 : CH_12</td><td>Service: Checkin-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>198 : CH_13</td><td>Service: Checkin-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>199 : GLIA_1</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: On not passing any thing in request.</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Line Item and Amount Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+</td></tr><tr><td>200 : GLIA_2</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: If try to get line amount before checkin</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: netAmount and Value: null, MATCHES<br>     
+Key: tax and Value: null, MATCHES<br>     
+Key: message and Value: Line Item and Amount Not Found, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: itemizedPurchases and Value: null, MATCHES<br>     
+Key: totalAmount and Value: null, MATCHES<br>     
+Key: itemTotal and Value: null, MATCHES<br>     
+Key: readyForPayment and Value: null, MATCHES<br>     
+Key: discountsInDollar and Value: null, MATCHES<br>     
+</td></tr><tr><td>201 : GLIA_3</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: If passed Invalid Request</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Line Item and Amount Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: readyForPayment and Value: false, MATCHES<br>     
+</td></tr><tr><td>202 : GLIA_4</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: If passed Request with method as POST/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>203 : GLIA_4</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: If passed Request with method as POST/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>204 : GLIA_5</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>205 : GLIA_6</td><td>Service: Get Line items and Amounts-- Method POST<br> 
+Scenario: with passed Invalid User Id in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: netAmount and Value: null, MATCHES<br>     
+Key: tax and Value: null, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+Key: itemizedPurchases and Value: null, MATCHES<br>     
+Key: totalAmount and Value: null, MATCHES<br>     
+Key: itemTotal and Value: null, MATCHES<br>     
+Key: readyForPayment and Value: null, MATCHES<br>     
+Key: discountsInDollar and Value: null, MATCHES<br>     
+</td></tr><tr><td>206 : GLRO_1</td><td>Service: Get Loyalty Reward and Offers -- Method GET<br> 
+Scenario: with proper User Id in URL</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>207 : GLRO_2</td><td>Service: Get Loyalty Reward and Offers -- Method GET<br> 
+Scenario: If passed some unwanted parameter in Request</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>208 : GLRO_3</td><td>Service: Get Loyalty Reward and Offers -- Method POST<br> 
+Scenario: If passed Request with method as POST.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>209 : GLRO_3</td><td>Service: Get Loyalty Reward and Offers -- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>210 : GLRO_4</td><td>Service: Get Loyalty Reward and Offers -- Method POST<br> 
+Scenario: with passed Invalid User Id in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>Key: offers and Value: null, MATCHES<br>     
+
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: loyalty and Value: null, MATCHES<br>     
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 03, MATCHES<br>     
+Key: rewards and Value: null, MATCHES<br>     
+</td></tr><tr><td>211 : GLRO_5</td><td>Service: Get Loyalty Reward and Offers -- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>225 : PSAT_1</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passing valid amount and accountID.</td><td><font color="red">FAIL</font></td><td>2.5</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: Successfully payment has been done., <b>Found</b>:  Successfully Payment Has Been Done<br> 
+
+Key: type and Value: 01, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 100, <b>Found</b>:  100.0<br> 
+
+Key: cardBalance and Value: 0, MATCHES<br>     
+Key: totalPaidWithCard and Value: 0, MATCHES<br>     
+
+ <b>Key</b>: paidAmount, <b>Expected</b>: 100, <b>Found</b>:  100.0<br> 
+
+</td></tr><tr><td>226 : PSAT_2</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passes for Split transaction</td><td><font color="red">FAIL</font></td><td>2.5</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Successfully Payment Has Been Done, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 400, <b>Found</b>:  400.0<br> 
+
+Key: cardBalance and Value: 0, MATCHES<br>     
+Key: totalPaidWithCard and Value: 0, MATCHES<br>     
+
+ <b>Key</b>: paidAmount, <b>Expected</b>: 400, <b>Found</b>:  400.0<br> 
+
+</td></tr><tr><td>227 : PSAT_3</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>228 : PSAT_4</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>229 : PSAT_5</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed Request with method as GET/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>230 : PSAT_5</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed Request with method as GET/PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>231 : PSAT_6</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed alphabets/special characters in totalAmount parameter in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>232 : PSAT_7</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed alphabets/special characters in chargeAmount parameter in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>233 : PSAT_8</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed alphabets/special characters in accId parameter in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid AccId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>234 : PSAT_9</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If No Content is passed in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>235 : PSAT_10</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: with passed Invalid User Id in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+Key: message and Value: Invalid Userid, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 0, <b>Found</b>:  null<br> 
+
+Key: paymentByCard and Value: null, MATCHES<br>     
+
+ <b>Key</b>: paidAmount, <b>Expected</b>: 0, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>236 : PSAT_11</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed fake cardRef in request</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Account ID Does Not Exist, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>237 : PSAT_12</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: If passed fake cardRef  for secondary card request</td><td>PASS</td><td>0.7</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Account ID Does Not Exist, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>238 : PSAT_13</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: if passed same cardRef for both account .</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found null pointer exception</td></tr><tr><td>239 : PSAT_14</td><td>Service: pay specified Amount for transaction-- Method POST<br> 
+Scenario: with out API-key as headers</td><td><font color="red">FAIL</font></td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 400, <b>Found</b>:  null<br> 
+
+</td></tr><tr><td>240 : ALROAD_1</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied all loyalty , rewards and offers</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>241 : ALROAD_2</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed IInvalid Userid in URL</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: message, <b>Expected</b>: IInvalid Userid, <b>Found</b>:  Invalid Userid<br> 
+
+Key: type and Value: 03, MATCHES<br>     
+</td></tr><tr><td>242 : ALROAD_3</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed with a extra " , " after the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>243 : ALROAD_4</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without a " , " in between the parameters in Request.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>244 : ALROAD_5</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied only loyalty with all positive values only</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>245 : ALROAD_6</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied "loyalty": title parameter with all positive values only</td><td><font color="red">FAIL</font></td><td>NA</td><td>Found IO exception</td></tr><tr><td>246 : ALROAD_7</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without loyaltyId parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid LoyaltyId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>247 : ALROAD_8</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with loyaltyId parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid LoyaltyId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>248 : ALROAD_9</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without pointConversion parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>249 : ALROAD_10</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with pointConversion parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>250 : ALROAD_11</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed decimal with pointConversion parameter</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>251 : ALROAD_12</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without loyaltyPoints parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>252 : ALROAD_13</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with loyaltyPoints parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>253 : ALROAD_14</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed decimal with loyaltyPoints parameter</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>254 : ALROAD_15</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed decimal with loyaltyPoints parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: PointRedeemed Should Be Less Than LoyaltyPoints, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>255 : ALROAD_16</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without PointsRedeemed parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>256 : ALROAD_17</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with PointsRedeemed parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>257 : ALROAD_18</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed decimal with PointsRedeemed parameter</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>258 : ALROAD_19</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without dollarRedeemed parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>259 : ALROAD_20</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with dollarRedeemed parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>260 : ALROAD_21</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Decimal with dollarRedeemed parameter</td><td><font color="red">FAIL</font></td><td>0.6</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>261 : ALROAD_22</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied only Rewards with all positive values</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>262 : ALROAD_23</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: when passed with out "rewards": title</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>263 : ALROAD_24</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without rewardId parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid RewardId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>264 : ALROAD_25</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with rewardId parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid RewardId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>265 : ALROAD_26</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Decimal with rewardId parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid RewardId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>266 : ALROAD_27</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without redemptionValue parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>267 : ALROAD_28</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with redemptionValue parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>268 : ALROAD_29</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Decimal with redemptionValue parameter</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>269 : ALROAD_30</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without redemptionType parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>270 : ALROAD_31</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed other than 0, 1 in  redemptionType parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid RedemptionType, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>271 : ALROAD_32</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Alpha / special char in  redemptionType parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>272 : ALROAD_33</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Decimal in  redemptionType parameter value</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>273 : ALROAD_34</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied only Offers with all positive values</td><td><font color="red">FAIL</font></td><td>0.7</td><td>
+ <b>Key</b>: code, <b>Expected</b>: M110, <b>Found</b>:  M00110<br> 
+
+
+ <b>Key</b>: netAmount, <b>Expected</b>: 9, <b>Found</b>:  9.0<br> 
+
+Key: tax and Value: 0.1, MATCHES<br>     
+Key: message and Value: Redeemed Successfully, MATCHES<br>     
+Key: type and Value: 01, MATCHES<br>     
+Key: couponDiscount and Value: 10, MATCHES<br>     
+
+ <b>Key</b>: totalAmount, <b>Expected</b>: 10, <b>Found</b>:  10.0<br> 
+
+Key: productSKU and Value: 1223, MATCHES<br>     
+Key: itemTotal and Value: 11, MATCHES<br>     
+Key: readyForPayment and Value: true, MATCHES<br>     
+Key: price and Value: 10, MATCHES<br>     
+Key: qty and Value: 1, MATCHES<br>     
+Key: name and Value: choco, MATCHES<br>     
+Key: discountsInDollar and Value: 24.4, MATCHES<br>     
+</td></tr><tr><td>274 : ALROAD_35</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: When applied without "Offers": tiltle with all positive values</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Request  or  Fields/Types Are Missing, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>275 : ALROAD_36</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed without couponId parameter value</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid CouponId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>276 : ALROAD_37</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed special characters/ alphabets with couponId parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid CouponId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>277 : ALROAD_38</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Decimal with couponId parameter</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter valid CouponId, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>278 : ALROAD_39</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Request with method as GET.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>279 : ALROAD_39</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If passed Request with method as PUT.</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Incorrect Method, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>280 : ALROAD_40</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: If No Content is passed in Request</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Enter Valid Data, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr><tr><td>281 : ALROAD_41</td><td>Service: Apply selected loyalty,rewards and offers to Amount for discounts-- Method POST<br> 
+Scenario: with out API-key as headers</td><td>PASS</td><td>0.6</td><td>Key: code and Value: M001, MATCHES<br>     
+Key: message and Value: Invalid api-key, MATCHES<br>     
+Key: type and Value: 02, MATCHES<br>     
+</td></tr>
